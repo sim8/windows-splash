@@ -20,7 +20,7 @@ const programs = {
 function generateInitialPos() {
   return [
     Math.floor(Math.random() * 200 + 1),
-    Math.floor(Math.random() * 100 + 1)
+    Math.floor(Math.random() * 150 + 1)
   ];
 }
 
