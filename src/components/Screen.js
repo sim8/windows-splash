@@ -8,7 +8,7 @@ import Programs from "./programs";
 const ScreenWrapper = styled.div`
   width: 800px;
   height: 600px;
-  overflow: "hidden";
+  overflow: hidden;
   position: relative;
   outline: 2px solid white;
 `;
@@ -37,6 +37,8 @@ function windowsReducer(state, action) {
         }
       ];
     }
+    case "CLOSE":
+      return state.filter(window => window.id !== action.id);
     case "DRAG": {
       return state.map(window => {
         if (window.id === action.id) {
@@ -65,6 +67,7 @@ function Screen() {
       <Window
         key={id}
         setPos={pos => dispatch({ type: "DRAG", id, pos })}
+        onClose={() => dispatch({ type: "CLOSE", id })}
         {...window}
       >
         <Program />
@@ -82,9 +85,10 @@ function Screen() {
       {startMenuOpen && (
         <StartMenu
           programs={programs}
-          onProgramClick={id =>
-            dispatch({ type: "OPEN", id, initialPos: generateInitialPos() })
-          }
+          onProgramClick={id => {
+            setStartMenuOpen(false);
+            dispatch({ type: "OPEN", id, initialPos: generateInitialPos() });
+          }}
         />
       )}
     </ScreenWrapper>

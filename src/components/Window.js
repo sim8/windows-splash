@@ -25,7 +25,13 @@ const CloseButton = styled.div`
   right: 0;
 `;
 
-function Window({ children, xPos: savedXPos, yPos: savedYPos, setPos }) {
+function Window({
+  children,
+  xPos: savedXPos,
+  yPos: savedYPos,
+  setPos,
+  onClose
+}) {
   const [dragStartPos, setDragStartPos] = useState(null);
   const [draggedDistance, setDraggedDistance] = useState([0, 0]);
   const xPos = savedXPos + draggedDistance[0];
@@ -56,7 +62,7 @@ function Window({ children, xPos: savedXPos, yPos: savedYPos, setPos }) {
         onMouseUp={onFinishDrag}
         onMouseOut={() => dragStartPos && onFinishDrag()}
       >
-        <CloseButton>X</CloseButton>
+        <CloseButton onClick={onClose}>X</CloseButton>
       </Header>
       {children}
     </WindowWrapper>
