@@ -18,11 +18,36 @@ const Header = styled.div`
 `;
 
 const CloseButton = styled.div`
+  right: 8px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  &:before,
+  &:after {
+    position: absolute;
+    left: 7px;
+    content: " ";
+    height: 18px;
+    width: 2px;
+    background-color: #fff;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+`;
+
+const CloseButtonWrapper = styled.div`
   width: 30px;
   height: 30px;
   position: absolute;
-  outline: 2px solid white;
   right: 0;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 function Window({
@@ -62,7 +87,9 @@ function Window({
         onMouseUp={onFinishDrag}
         onMouseOut={() => dragStartPos && onFinishDrag()}
       >
-        <CloseButton onClick={onClose}>X</CloseButton>
+        <CloseButtonWrapper onClick={onClose}>
+          <CloseButton />
+        </CloseButtonWrapper>
       </Header>
       {children}
     </WindowWrapper>

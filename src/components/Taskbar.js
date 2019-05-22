@@ -11,18 +11,25 @@ const TaskbarWrapper = styled.div`
 `;
 
 const StartButton = styled.div`
-  width: 80px;
+  width: 97px;
   height: 100%;
   left: 0;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
   position: absolute;
   outline: 2px solid white;
+  &:hover {
+    background-color: white;
+    color: red;
+  }
 `;
 
 function Taskbar({ onStartClick }) {
   return (
     <TaskbarWrapper>
       <StartButton role="button" onClick={onStartClick}>
-        Start
+        START
       </StartButton>
     </TaskbarWrapper>
   );
