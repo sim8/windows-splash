@@ -10,13 +10,21 @@ const StartMenuWrapper = styled.div`
   background-color: #f00;
 `;
 
+const MenuItem = styled.div`
+  &:hover {
+    background-color: white;
+    color: red;
+    cursor: pointer;
+  }
+`;
+
 function StartMenu({ programs, onProgramClick }) {
   return (
     <StartMenuWrapper>
       {Object.keys(programs).map(id => (
-        <div key={id} onClick={() => onProgramClick(id)}>
+        <MenuItem key={id} onClick={() => onProgramClick(id)}>
           {id}
-        </div>
+        </MenuItem>
       ))}
     </StartMenuWrapper>
   );

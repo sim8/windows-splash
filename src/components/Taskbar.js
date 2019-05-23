@@ -19,10 +19,6 @@ const StartButton = styled.div`
   cursor: pointer;
   position: absolute;
   outline: 2px solid white;
-  &:hover {
-    background-color: white;
-    color: red;
-  }
 `;
 
 function Taskbar({ onStartClick }) {
