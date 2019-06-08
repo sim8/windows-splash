@@ -6,8 +6,9 @@ const TaskbarWrapper = styled.div`
   height: 40px;
   bottom: 0;
   position: absolute;
-  outline: 2px solid white;
-  background-color: #f00;
+  outline: 2px solid ${props => props.theme.trim};
+  background-color: ${props => props.theme.main};
+  transition: outline 0.5s, background-color 0.5s;
 `;
 
 const StartButton = styled.div`
@@ -18,7 +19,8 @@ const StartButton = styled.div`
   text-align: center;
   cursor: pointer;
   position: absolute;
-  outline: 2px solid white;
+  outline: 2px solid ${props => props.theme.trim};
+  transition: outline 0.5s;
 `;
 
 function Taskbar({ onStartClick }) {

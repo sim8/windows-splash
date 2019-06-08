@@ -6,14 +6,15 @@ const StartMenuWrapper = styled.div`
   height: 300px;
   bottom: 40px;
   position: absolute;
-  outline: 2px solid white;
-  background-color: #f00;
+  outline: 2px solid ${props => props.theme.trim};
+  background-color: ${props => props.theme.main};
+  transition: outline: 0.5s, background-color 0.5s;
 `;
 
 const MenuItem = styled.div`
   &:hover {
-    background-color: white;
-    color: red;
+    background-color: ${props => props.theme.trim};
+    color: ${props => props.theme.main};
     cursor: pointer;
   }
 `;

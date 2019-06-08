@@ -10,11 +10,13 @@ const ScreenWrapper = styled.div`
   height: 600px;
   overflow: hidden;
   position: relative;
-  outline: 2px solid white;
+  outline: 2px solid ${props => props.theme.trim};
+  transition: outline 0.5s;
 `;
 
 const programs = {
-  ABOUT: Programs.About
+  ABOUT: Programs.About,
+  SETTINGS: Programs.Settings
 };
 
 function generateInitialPos() {
@@ -57,7 +59,7 @@ function windowsReducer(state, action) {
   }
 }
 
-function Screen() {
+function Screen({ setTheme }) {
   const [windows, dispatch] = useReducer(windowsReducer, []);
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const windowElements = windows.map(window => {
@@ -70,7 +72,7 @@ function Screen() {
         onClose={() => dispatch({ type: "CLOSE", id })}
         {...window}
       >
-        <Program />
+        <Program setTheme={setTheme} />
       </Window>
     );
   });
