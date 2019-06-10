@@ -17,7 +17,8 @@ const ScreenWrapper = styled.div`
 
 const programs = {
   ABOUT: Programs.About,
-  SETTINGS: Programs.Settings
+  SETTINGS: Programs.Settings,
+  PROGRAMS: Programs.Programs
 };
 
 function Screen({ setTheme }) {
