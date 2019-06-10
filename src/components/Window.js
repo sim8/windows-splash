@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import XIcon from "./display/XIcon";
 
 const WindowWrapper = styled.div`
   width: 500px;
@@ -17,30 +18,6 @@ const Header = styled.div`
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s;
   top: 0;
-`;
-
-const CloseButton = styled.div`
-  right: 8px;
-  top: 6px;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  &:before,
-  &:after {
-    position: absolute;
-    left: 7px;
-    content: " ";
-    height: 18px;
-    width: 2px;
-    background-color: ${props => props.theme.trim};
-    transition: background-color 0.5s;
-  }
-  &:before {
-    transform: rotate(45deg);
-  }
-  &:after {
-    transform: rotate(-45deg);
-  }
 `;
 
 const CloseButtonWrapper = styled.div`
@@ -91,7 +68,7 @@ function Window({
         onMouseOut={() => dragStartPos && onFinishDrag()}
       >
         <CloseButtonWrapper onClick={onClose}>
-          <CloseButton />
+          <XIcon />
         </CloseButtonWrapper>
       </Header>
       {children}
