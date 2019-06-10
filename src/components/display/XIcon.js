@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 const XIcon = styled.div`
-  right: 8px;
-  top: 6px;
   width: 16px;
-  height: 16px;
+  height: 18px;
   position: absolute;
   &:before,
   &:after {

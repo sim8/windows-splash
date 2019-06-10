@@ -28,6 +28,9 @@ const CloseButtonWrapper = styled.div`
   &:hover {
     cursor: pointer;
   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 function Window({
