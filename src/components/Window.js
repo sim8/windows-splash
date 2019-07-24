@@ -11,7 +11,6 @@ const WindowWrapper = styled.div`
   outline: 2px solid ${props => props.theme.trim};
   background-color: ${props => props.theme.main};
   transition: outline 0.5s, background-color 0.5s;
-
   .window-content {
     flex: 1 1 auto;
   }
@@ -20,18 +19,23 @@ const WindowWrapper = styled.div`
 const Header = styled.div`
   width: 100%;
   height: 30px;
-  /* position: absolute; */
-  /* flex: 0 1 auto; */
+  display: flex;
+  justify-content: space-between;
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s;
-  /* top: 0; */
+  .window-title {
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+    left: 12px;
+  }
 `;
 
 const CloseButtonWrapper = styled.div`
   width: 30px;
   height: 30px;
-  position: absolute;
-  right: 0;
   &:hover {
     cursor: pointer;
   }
@@ -45,7 +49,8 @@ function Window({
   xPos: savedXPos,
   yPos: savedYPos,
   setPos,
-  onClose
+  onClose,
+  id
 }) {
   const [dragStartPos, setDragStartPos] = useState(null);
   const [draggedDistance, setDraggedDistance] = useState([0, 0]);
@@ -77,6 +82,7 @@ function Window({
         onMouseUp={onFinishDrag}
         onMouseOut={() => dragStartPos && onFinishDrag()}
       >
+        <h4 className="window-title">{id}</h4>
         <CloseButtonWrapper onClick={onClose}>
           <XIcon />
         </CloseButtonWrapper>

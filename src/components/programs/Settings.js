@@ -19,8 +19,9 @@ const Checkbox = styled.div`
   position: absolute;
   left: -25px;
   top: 11px;
+  background-color: ${props => (props.selected ? props.theme.trim : "initial")};
   outline: 2px solid ${props => props.theme.trim};
-  transition: outline 0.5s;
+  transition: outline 0.5s, background-color 0.5s;
   > div {
     top: -3px;
     left: -2px;
@@ -28,19 +29,13 @@ const Checkbox = styled.div`
 `;
 
 function Settings({ setTheme, ...props }) {
-  const themeContext = useContext(ThemeContext);
-  // console.log(Themes);
-  // debugger;
-  Object.keys(Themes).forEach(t =>
-    console.log(Themes[t], themeContext, Themes[t] === themeContext)
-  );
+  const { id: selected } = useContext(ThemeContext);
   return (
     <div>
-      <h1>Settings</h1>
       <ThemeList>
         {Object.keys(Themes).map(key => (
           <li key={key} onClick={() => setTheme(Themes[key])}>
-            <Checkbox>{key === themeContext.id ? <XIcon /> : null}</Checkbox>
+            <Checkbox selected={key === selected} />
             {key}
           </li>
         ))}
