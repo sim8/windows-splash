@@ -21,7 +21,7 @@ const ScreenWrapper = styled.div`
 `;
 
 function App() {
-  const [theme, setTheme] = useState(Themes.DARK);
+  const [theme, setTheme] = useState(Themes.STANDARD);
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>

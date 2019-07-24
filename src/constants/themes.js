@@ -1,8 +1,8 @@
 export default {
   STANDARD: {
     id: "STANDARD",
-    main: "red",
-    trim: "white"
+    main: "#0d192f",
+    trim: "#0fff0f"
   },
   DARK: {
     id: "DARK",

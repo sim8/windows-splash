@@ -21,7 +21,7 @@ const Checkbox = styled.div`
   top: 11px;
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s;
-  div {
+  > div {
     top: -3px;
     left: -2px;
   }
