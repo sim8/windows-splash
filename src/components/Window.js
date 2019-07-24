@@ -5,19 +5,26 @@ import XIcon from "./display/XIcon";
 const WindowWrapper = styled.div`
   width: 500px;
   height: 350px;
+  display: flex;
+  flex-flow: column;
   position: absolute;
   outline: 2px solid ${props => props.theme.trim};
   background-color: ${props => props.theme.main};
   transition: outline 0.5s, background-color 0.5s;
+
+  .window-content {
+    flex: 1 1 auto;
+  }
 `;
 
 const Header = styled.div`
   width: 100%;
   height: 30px;
-  position: absolute;
+  /* position: absolute; */
+  /* flex: 0 1 auto; */
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s;
-  top: 0;
+  /* top: 0; */
 `;
 
 const CloseButtonWrapper = styled.div`
@@ -74,7 +81,7 @@ function Window({
           <XIcon />
         </CloseButtonWrapper>
       </Header>
-      {children}
+      <div className="window-content">{children}</div>
     </WindowWrapper>
   );
 }

@@ -6,6 +6,10 @@ const AboutWrapper = styled.div`
   color: black;
   font-family: "times new roman", "sans-serif";
   height: 100%;
+  h1 {
+    margin: 0;
+    padding: 5px 0;
+  }
 `;
 
 function About() {
