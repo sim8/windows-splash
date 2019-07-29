@@ -13,6 +13,8 @@ const WindowWrapper = styled.div`
   transition: outline 0.5s, background-color 0.5s;
   .window-content {
     flex: 1 1 auto;
+    max-height: 320px;
+    overflow: scroll;
   }
 `;
 
