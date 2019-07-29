@@ -14,7 +14,6 @@ const WindowWrapper = styled.div`
   .window-content {
     flex: 1 1 auto;
     max-height: 320px;
-    overflow: scroll;
   }
 `;
 
