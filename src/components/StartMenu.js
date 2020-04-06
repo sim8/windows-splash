@@ -15,10 +15,10 @@ const StartMenuWrapper = styled.div`
 
 const MenuItem = styled.div`
   padding-left: 8px;
+  cursor: pointer;
   &:hover {
     background-color: ${props => props.theme.trim};
     color: ${props => props.theme.main};
-    cursor: pointer;
   }
 `;
 

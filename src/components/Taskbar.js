@@ -21,6 +21,10 @@ const StartButton = styled.div`
   position: absolute;
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s;
+  &:hover {
+    background-color: ${props => props.theme.trim};
+    color: ${props => props.theme.main};
+  }
 `;
 
 function Taskbar({ onStartClick }) {

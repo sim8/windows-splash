@@ -18,7 +18,6 @@ const AboutWrapper = styled.div`
     width: 260px;
     margin: 0;
     padding: 5px 0;
-    font-family: "Niconne", cursive;
   }
 `;
 
@@ -29,7 +28,7 @@ function About() {
         alt="Simeon Lees"
         src={process.env.PUBLIC_URL + "/img/mugshot.png"}
       />
-      <h1>Hi! I'm Simeon Lees.</h1>
+      <p>Hi! I'm Simeon Lees.</p>
       <p>
         I'm a software engineer based in Dublin. Contact me on{" "}
         <a
