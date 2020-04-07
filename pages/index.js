@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import Themes from "../constants/themes";
-import Screen from "../components/Screen";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import Themes from '../constants/themes';
+import Screen from '../components/Screen';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -13,17 +13,17 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const AppWrapper = styled.div`
-  background-color: ${(props) => props.theme.main};
+  background-color: ${props => props.theme.main};
   height: 100vh;
-  font-family: "Space Mono", monospace;
-  color: ${(props) => props.theme.trim};
+  font-family: 'Space Mono', monospace;
+  color: ${props => props.theme.trim};
   transition: color 0.5s, background-color 0.5s;
   font-size: 22px;
   a:link,
   a:visited,
   a:hover,
   a:active {
-    color: ${(props) => props.theme.trim};
+    color: ${props => props.theme.trim};
     transition: color 0.5s, background-color 0.5s;
   }
 `;

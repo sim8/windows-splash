@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const XIcon = styled.div`
   width: 16px;
@@ -11,7 +11,7 @@ const XIcon = styled.div`
   &:after {
     position: absolute;
     left: 7px;
-    content: " ";
+    content: ' ';
     height: 18px;
     width: 2px;
     visibility: visible;
