@@ -19,6 +19,13 @@ const AppWrapper = styled.div`
   color: ${(props) => props.theme.trim};
   transition: color 0.5s, background-color 0.5s;
   font-size: 22px;
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: ${(props) => props.theme.trim};
+    transition: color 0.5s, background-color 0.5s;
+  }
 `;
 
 const ScreenWrapper = styled.div`

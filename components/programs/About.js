@@ -27,12 +27,16 @@ function About() {
       <img alt="Simeon Lees" src="/img/mugshot.png" />
       <p>Hi! I'm Simeon Lees.</p>
       <p>
-        I'm a software engineer based in Dublin. Contact me on{" "}
+        I'm a software engineer based in Dublin. Find me on{" "}
         <a
           href="https://uk.linkedin.com/in/simeon-lees-3b68a2a1"
           target="_blank"
         >
           LinkedIn
+        </a>{" "}
+        or{" "}
+        <a href="https://github.com/sim8" target="_blank">
+          GitHub
         </a>
         .
       </p>
