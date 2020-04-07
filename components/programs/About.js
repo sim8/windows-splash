@@ -10,7 +10,7 @@ const AboutWrapper = styled.div`
     padding: 10px;
     margin-right: 25px;
     border: 2px solid;
-    border-color: ${props => props.theme.trim};
+    border-color: ${(props) => props.theme.trim};
     transition: border-color 0.5s;
   }
   h1 {
@@ -24,10 +24,7 @@ const AboutWrapper = styled.div`
 function About() {
   return (
     <AboutWrapper>
-      <img
-        alt="Simeon Lees"
-        src={process.env.PUBLIC_URL + "/img/mugshot.png"}
-      />
+      <img alt="Simeon Lees" src="/img/mugshot.png" />
       <p>Hi! I'm Simeon Lees.</p>
       <p>
         I'm a software engineer based in Dublin. Contact me on{" "}
