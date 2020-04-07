@@ -7,6 +7,8 @@ import Screen from "../components/Screen";
 const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 `;
 
@@ -34,6 +36,11 @@ const Home = () => {
         {/* TODO */}
         <title>Simeon Lees</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap"
+          rel="stylesheet"
+          key="google-font-space-mono"
+        />
       </Head>
       <GlobalStyles />
       <AppWrapper>
