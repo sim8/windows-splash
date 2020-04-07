@@ -1,9 +1,9 @@
-import { useReducer } from "react";
+import { useReducer } from 'react';
 
 const generateInitialPos = () => {
   return [
     Math.floor(Math.random() * 200 + 1),
-    Math.floor(Math.random() * 150 + 1)
+    Math.floor(Math.random() * 150 + 1),
   ];
 };
 
@@ -13,7 +13,7 @@ const bringToFront = (state, id) => {
 
 const windowsReducer = (state, action) => {
   switch (action.type) {
-    case "OPEN": {
+    case 'OPEN': {
       if (state.some(w => w.id === action.id)) {
         return bringToFront(state, action.id);
       }
@@ -23,20 +23,20 @@ const windowsReducer = (state, action) => {
         {
           xPos,
           yPos,
-          id: action.id
-        }
+          id: action.id,
+        },
       ];
     }
-    case "CLOSE":
+    case 'CLOSE':
       return state.filter(w => w.id !== action.id);
-    case "DRAG": {
+    case 'DRAG': {
       return state.map(window => {
         if (window.id === action.id) {
           const [xPos, yPos] = action.pos;
           return {
             ...window,
             xPos,
-            yPos
+            yPos,
           };
         }
         return window;

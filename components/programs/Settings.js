@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { ThemeContext } from "styled-components";
-import Themes from "../../constants/themes";
-import XIcon from "../display/XIcon";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { ThemeContext } from 'styled-components';
+import Themes from '../../constants/themes';
+import XIcon from '../display/XIcon';
 
 const ThemeList = styled.ul`
   list-style-type: none;
@@ -19,7 +19,7 @@ const Checkbox = styled.div`
   position: absolute;
   left: -25px;
   top: 11px;
-  background-color: ${props => (props.selected ? props.theme.trim : "initial")};
+  background-color: ${props => (props.selected ? props.theme.trim : 'initial')};
   outline: 2px solid ${props => props.theme.trim};
   transition: outline 0.5s, background-color 0.5s;
   > div {

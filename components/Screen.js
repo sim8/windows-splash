@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Taskbar from "./Taskbar";
-import StartMenu from "./StartMenu";
-import Window from "./Window";
-import Programs from "./programs";
-import useWindows from "../hooks/useWindows";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Taskbar from './Taskbar';
+import StartMenu from './StartMenu';
+import Window from './Window';
+import Programs from './programs';
+import useWindows from '../hooks/useWindows';
 
 const ScreenWrapper = styled.div`
   width: 800px;
@@ -18,7 +18,7 @@ const ScreenWrapper = styled.div`
 const programs = {
   ABOUT: Programs.About,
   SETTINGS: Programs.Settings,
-  PROGRAMS: Programs.Programs
+  PROGRAMS: Programs.Programs,
 };
 
 function Screen({ setTheme }) {
@@ -30,8 +30,8 @@ function Screen({ setTheme }) {
     return (
       <Window
         key={id}
-        setPos={pos => dispatch({ type: "DRAG", id, pos })}
-        onClose={() => dispatch({ type: "CLOSE", id })}
+        setPos={pos => dispatch({ type: 'DRAG', id, pos })}
+        onClose={() => dispatch({ type: 'CLOSE', id })}
         {...window}
       >
         <Program setTheme={setTheme} />
@@ -51,7 +51,7 @@ function Screen({ setTheme }) {
           programs={programs}
           onProgramClick={id => {
             setStartMenuOpen(false);
-            dispatch({ type: "OPEN", id });
+            dispatch({ type: 'OPEN', id });
           }}
         />
       )}

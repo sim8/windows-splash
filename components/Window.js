@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import XIcon from "./display/XIcon";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import XIcon from './display/XIcon';
 
 const WindowWrapper = styled.div`
   width: 500px;
@@ -51,7 +51,7 @@ function Window({
   yPos: savedYPos,
   setPos,
   onClose,
-  id
+  id,
 }) {
   const [dragStartPos, setDragStartPos] = useState(null);
   const [draggedDistance, setDraggedDistance] = useState([0, 0]);
@@ -68,13 +68,13 @@ function Window({
       yPos={yPos}
       style={{
         left: xPos,
-        top: yPos
+        top: yPos,
       }}
       onMouseMove={e =>
         dragStartPos &&
         setDraggedDistance([
           -(dragStartPos[0] - e.clientX),
-          -(dragStartPos[1] - e.clientY)
+          -(dragStartPos[1] - e.clientY),
         ])
       }
     >
