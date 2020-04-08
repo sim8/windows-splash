@@ -29,6 +29,9 @@ const windowsReducer = (state, action) => {
     }
     case 'CLOSE':
       return state.filter(w => w.id !== action.id);
+    case 'BRING_TO_FRONT': {
+      return bringToFront(state, action.id);
+    }
     case 'DRAG': {
       return state.map(window => {
         if (window.id === action.id) {

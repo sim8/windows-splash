@@ -52,6 +52,7 @@ function Window({
   setPos,
   onClose,
   id,
+  ...props
 }) {
   const [dragStartPos, setDragStartPos] = useState(null);
   const [draggedDistance, setDraggedDistance] = useState([0, 0]);
@@ -77,6 +78,7 @@ function Window({
           -(dragStartPos[1] - e.clientY),
         ])
       }
+      {...props}
     >
       <Header
         onMouseDown={e => setDragStartPos([e.clientX, e.clientY])}

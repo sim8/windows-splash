@@ -32,6 +32,7 @@ function Screen({ setTheme }) {
         key={id}
         setPos={pos => dispatch({ type: 'DRAG', id, pos })}
         onClose={() => dispatch({ type: 'CLOSE', id })}
+        onMouseDown={() => dispatch({ type: 'BRING_TO_FRONT', id })}
         {...window}
       >
         <Program setTheme={setTheme} />
