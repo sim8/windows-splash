@@ -54,7 +54,6 @@ const Home = () => {
         <ScreenWrapper>
           <Screen setTheme={setTheme} />
         </ScreenWrapper>
-        )} />
       </AppWrapper>
     </ThemeProvider>
   );
