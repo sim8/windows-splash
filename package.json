@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prettier:write": "prettier --write \"**/*.js\""
+    "prettier:write": "prettier --write \"**/*.js\"",
+    "lint": "eslint **"
   },
   "dependencies": {
     "next": "9.3.4",
